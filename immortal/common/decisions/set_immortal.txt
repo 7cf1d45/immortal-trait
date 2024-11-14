@@ -1,0 +1,86 @@
+set_immortal = {
+	picture = {
+		reference = "gfx/interface/illustrations/decisions/decision_personal_religious.dds"
+	}
+	decision_group_type = major
+	ai_check_interval = 0
+	title = set_immortal_title
+	desc = set_immortal_desc
+	selection_tooltip = set_immortal_selection_tooltip
+	confirm_text = set_immortal_confirm_text
+	is_shown = {
+		is_ai = no
+		NOT = {
+			has_trait = immortality21
+		}
+		years_from_game_start <= 1
+	}
+	is_valid = {
+	}
+	effect = {
+		add_trait = immortality21
+		ad_immortal = yes
+	}
+	ai_potential = {
+		always = no
+	}
+	ai_will_do = {
+		base = 0
+	}
+}
+
+be_celibatarian = {
+	picture = {
+		reference = "gfx/interface/illustrations/decisions/decision_personal_religious.dds"
+	}
+	ai_check_interval = 0
+	title = be_celibatarian_title
+	desc = be_celibatarian_desc
+	selection_tooltip = be_celibatarian_selection_tooltip
+	confirm_text = be_celibatarian_confirm_text
+	is_shown = {
+		is_ai = no
+		has_trait = immortality21
+		NOT = {
+			has_trait = celibatarian
+		}
+	}
+	is_valid = {
+	}
+	effect = {
+		add_trait = celibatarian
+	}
+	ai_potential = {
+		always = no
+	}
+	ai_will_do = {
+		base = 0
+	}
+}
+
+re_celibatarian = {
+	picture = {
+		reference = "gfx/interface/illustrations/decisions/decision_personal_religious.dds"
+	}
+	ai_check_interval = 0
+	title = re_celibatarian_title
+	desc = re_celibatarian_desc
+	selection_tooltip = re_celibatarian_selection_tooltip
+	confirm_text = re_celibatarian_confirm_text
+	is_shown = {
+		is_ai = no
+		has_trait = immortality21
+		has_trait = celibatarian
+	}
+	is_valid = {
+	}
+	effect = {
+		remove_trait = celibatarian
+	}
+	ai_potential = {
+		always = no
+	}
+	ai_will_do = {
+		base = 0
+	}
+}
