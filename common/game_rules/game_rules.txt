@@ -1,0 +1,14 @@
+is_inheritance_immortality = {
+
+	categories = {
+		tweaks
+	}
+	default = is_yes_all
+
+	is_no={
+	}
+	is_yes_fa={
+	}
+	is_yes_all={
+	}
+}
