@@ -16,6 +16,7 @@ set_immortal = {
 		years_from_game_start <= 1
 	}
 	is_valid = {
+		age >= 16
 	}
 	effect = {
 		add_trait = immortality21
