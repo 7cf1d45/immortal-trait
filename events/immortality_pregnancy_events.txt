@@ -5,6 +5,7 @@ namespace = pregnancy
 # by Linnéa Thimrén
 pregnancy.0001 = {
 	hidden = yes
+	id_override_priority = 300
 	immediate = {
 		#PREGNANCY COMPLICATION CALCULATIONS & FLAG-SETTING
 		random_list = {
@@ -37,8 +38,8 @@ pregnancy.0001 = {
 				#More likely if you have sacred childbirth
 				modifier = {
 					factor = 2					# Religious doctrine focusing on providing a sanitary birthing chamber and supplies should have a substantial impact on birth complications.
-					faith = {
-						has_doctrine_parameter = safer_childbirths_active
+					rite = {
+						rite_has_parameter = safer_childbirths_active
 					}
 				}
 				#More likely if the Dynasty has the Kin legacy
@@ -66,6 +67,12 @@ pregnancy.0001 = {
 			}
 			3 = {
 				#Child dies during delivery (this triggers when the birth "should" have gone down, since we don't want to create the baby)
+				modifier = {
+					factor = 0.5					# Religious doctrine focusing on providing a sanitary birthing chamber and supplies should have a substantial impact on birth complications.
+					rite = {
+						rite_has_parameter = healthier_children_active
+					}
+				}
 				trigger_event = {
 					id = birth.3001
 					days = {
@@ -80,8 +87,8 @@ pregnancy.0001 = {
 					#to keep players from dying excessively
 					add = -2
 					OR = {
+						has_character_flag = immune_to_disease
 						is_ai = no
-						has_trait_with_flag = is_immortal
 					}
 				}
 				add_character_flag = {
@@ -96,8 +103,8 @@ pregnancy.0001 = {
 					#to keep players from dying excessively
 					add = -2
 					OR = {
+						has_character_flag = immune_to_disease
 						is_ai = no
-						has_trait_with_flag = is_immortal
 					}
 				}
 				trigger_event = {
@@ -112,8 +119,8 @@ pregnancy.0001 = {
 				#Sickly child (all other events happen as usual)
 				modifier = {
 					factor = 0.5					# Religious doctrine focusing on providing a sanitary birthing chamber and supplies should have a substantial impact on birth complications.
-					faith = {
-						has_doctrine_parameter = healthier_children_active
+					rite = {
+						rite_has_parameter = healthier_children_active
 					}
 				}
 				add_character_flag = {

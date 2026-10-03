@@ -1,4 +1,49 @@
-﻿#################### 出生触发
+﻿on_trait_gained = {
+	on_actions = {
+		on_trait_gained_add_immune_to_disease
+		immortality21_remove_negative_traits
+	}
+}
+
+on_trait_gained_add_immune_to_disease = {
+	trigger = {
+		scope:trait = {
+			has_trait_flag = immune_to_disease
+		}
+	}
+	effect = {
+		add_character_flag = immune_to_disease
+	}
+}
+
+immortality21_remove_negative_traits = {
+	trigger = {
+		has_trait_with_flag = immune_to_disease
+		scope:trait = {
+			OR = {
+				AND = {
+					has_trait_category = health
+					NOT = {
+						this = trait:pregnant
+					}
+				}
+				negative_physical_trait_trigger = yes
+			}
+		}
+	}
+	effect = {
+		remove_trait = scope:trait
+	}
+}
+
+set_immortal = {
+	effect = {
+		remove_trait = NonImmortality21
+		ad_immortal = yes
+	}
+}
+
+#################### 出生触发
 # 出生时触发 root 为出生角色
 on_birth_child = {
 	on_actions = {
@@ -15,62 +60,15 @@ son_of_immortality = {
 		OR = {
 			# 获得作用域角色的真正父亲
 			real_father ?= {
-				has_trait = immortality21
+				has_trait_with_flag = immortality21
 			}
 			# 存在母亲
 			mother ?= {
-				has_trait = immortality21
+				has_trait_with_flag = immortality21
 			}
 		}
 	}
 	effect = {
 		trigger_event = add_son_of_immortality.01
-	}
-}
-
-on_birthday = {
-	on_actions = {
-		remove_negative_traits
-	}
-}
-
-remove_negative_traits = {
-	trigger = {
-		OR = {
-			has_trait = son_of_immortality1
-			has_trait = son_of_immortality2
-			has_trait = immortality21
-		}
-	}
-	effect = {
-		random_trait = {
-			limit = {
-				has_trait_flag = is_healthy_trigger_flag
-				root = {
-					has_trait = prev
-				}
-			}
-			prev = {
-				remove_trait = prev
-			}
-		}
-		random_trait = {
-			limit = {
-				has_trait_flag = illness
-				root = {
-					has_trait = prev
-				}
-			}
-			prev = {
-				remove_trait = prev
-			}
-		}
-
-		if = {
-			limit = {
-				has_bad_physical_attribute_trigger = yes
-			}
-			remove_bad_physical_traits_effect = yes
-		}
 	}
 }

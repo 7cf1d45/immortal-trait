@@ -3,9 +3,10 @@ son_of_immortality1 = {
 	opposites = {
 		immortality21
 		son_of_immortality2
-		incapable
+		NonImmortality21
 	}
 	flag = is_immortal
+	flag = immune_to_disease
 	life_expectancy = 10000
 	years_of_fertility = 10000
 	health = 1000
@@ -33,9 +34,10 @@ son_of_immortality2 = {
 	opposites = {
 		immortality21
 		son_of_immortality1
-		incapable
+		NonImmortality21
 	}
 	flag = is_immortal
+	flag = immune_to_disease
 	life_expectancy = 10000
 	years_of_fertility = 10000
 	health = 1000
@@ -64,12 +66,44 @@ immortality21 = {
 	opposites = {
 		son_of_immortality1
 		son_of_immortality2
-		incapable
+		NonImmortality21
 	}
 	immortal = yes
 	flag = immortality
 	flag = is_immortal
-	minimum_age = 16
+	flag = immortality21
+	flag = immune_to_disease
+	stress_gain_mult = -0.5
+	enemy_hostile_scheme_success_chance_add = -500
+	enemy_hostile_scheme_phase_duration_add = 500
+	enemy_scheme_secrecy_add = -500
+	ruler_designer_cost = 0
+	desc = {
+		first_valid = {
+			triggered_desc = {
+				trigger = {
+					NOT = {
+						exists = this
+					}
+				}
+				desc = trait_immortality_desc
+			}
+			desc = trait_immortality_character_desc
+		}
+	}
+}
+
+NonImmortality21 = {
+	icon = "immortality.dds"
+	opposites = {
+		son_of_immortality1
+		son_of_immortality2
+		immortality21
+	}
+	flag = immortality21
+	flag = is_immortal
+	flag = immune_to_disease
+	health = 1000
 	stress_gain_mult = -0.5
 	enemy_hostile_scheme_success_chance_add = -500
 	enemy_hostile_scheme_phase_duration_add = 500

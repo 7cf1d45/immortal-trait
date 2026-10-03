@@ -1,46 +1,4 @@
-remove_bad_physical_traits_effect = {
-	remove_trait = eunuch
-	remove_trait = beardless_eunuch
-	remove_trait = clubfooted
-	remove_trait = hunchbacked
-	remove_trait = dwarf
-	remove_trait = giant
-	remove_trait = inbred
-	remove_trait = spindly
-	remove_trait = scaly
-	remove_trait = albino
-	# Physical traits.
-	remove_trait = wounded
-	remove_trait = maimed
-	remove_trait = one_eyed
-	remove_trait = one_legged
-	remove_trait = disfigured
-	remove_trait = wheezing
-	remove_trait = bleeder
-	remove_trait = impotent
-	remove_trait = dull
-	remove_trait = weak
-	remove_trait = stuttering
-	remove_trait = infertile
-	remove_trait = lisping
-	remove_trait = blind
-	remove_trait = possessed_1
-	remove_trait = possessed_genetic
-	remove_trait = intellect_bad_1
-	remove_trait = intellect_bad_2
-	remove_trait = intellect_bad_3
-	remove_trait = beauty_bad_1
-	remove_trait = beauty_bad_2
-	remove_trait = beauty_bad_3
-	remove_trait = physique_bad_1
-	remove_trait = physique_bad_2
-	remove_trait = physique_bad_3
-}
-
 ad_immortal = {
-	set_immortal = yes
-}
-
-set_immortal = {
+	add_trait = immortality21
 	set_immortal_age = 20
 }

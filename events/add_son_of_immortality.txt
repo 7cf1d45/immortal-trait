@@ -1,13 +1,11 @@
 namespace = add_son_of_immortality
-
-add_son_of_immortality.01={
+add_son_of_immortality.01 = {
 	hidden = yes
-	immediate={
-
+	immediate = {
 		if = {
 			limit = {
 				mother ?= {
-					has_trait = immortality21
+					has_trait_with_flag = immortality21
 				}
 				has_game_rule = is_yes_all
 			}
@@ -16,7 +14,7 @@ add_son_of_immortality.01={
 		else_if = {
 			limit = {
 				real_father ?= {
-					has_trait = immortality21
+					has_trait_with_flag = immortality21
 				}
 				has_game_rule = is_yes_all
 			}
@@ -25,7 +23,7 @@ add_son_of_immortality.01={
 		else_if = {
 			limit = {
 				real_father ?= {
-					has_trait = immortality21
+					has_trait_with_flag = immortality21
 				}
 				has_game_rule = is_yes_fa
 			}

@@ -1,0 +1,5 @@
+imm_age_values = {
+	value = 18
+	subtract = age
+	multiply = 12
+}

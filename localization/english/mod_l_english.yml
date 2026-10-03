@@ -4,6 +4,7 @@
  trait_son_of_immortality_desc: "immortal"
  trait_son_of_immortality_character_desc: "[ROOT.GetCharacter.GetFirstNameNoTooltip] is immortal"
  trait_immortality21: "immortal"
+ trait_NonImmortality21: "immortal"
  trait_immortality_desc: "immortal"
  trait_immortality_character_desc: "[ROOT.GetCharacter.GetFirstNameNoTooltip] is immortal"
  TRAIT_FLAG_DESC_immortality: "#P @goodhealth_icon! immortal#!"
